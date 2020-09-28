@@ -85,9 +85,12 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
+# Temporarily logs the new accounts emails to the console so we can get the
+# confirmation links
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# Tells allauth that we want to allow authentication using either usernames or emails
+# Tells allauth that we want to allow authentication using either usernames or
+# emails
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 # Makes email required to REGISTER for the site
 ACCOUNT_EMAIL_REQUIRED = True
@@ -95,6 +98,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 # Requires them to enter email twice on the REGISTRATION PAGE
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+# Specifying login url
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 # This URL can be '/' or any other page
