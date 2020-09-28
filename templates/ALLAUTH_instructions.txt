@@ -1,0 +1,6 @@
+Used command:
+cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates* ./templates/allauth/
+
+To copy files from previously installed allauth package into our own folder
+
+Deleted the OPENID and TESTS folders as we will use the standard ones
