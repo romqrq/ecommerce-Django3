@@ -1,0 +1,6 @@
+https://www.youtube.com/watch?v=bachwkoB2bk&ab_channel=MediaUpload
+
+python3 manage.py loaddata categories
+python3 manage.py loaddata products
+
+That creates categories and products saved on the json file

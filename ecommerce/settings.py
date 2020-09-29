@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'allauth.account',  # allauth - basic login and out
     'allauth.socialaccount',  # allauth - handles loggin via social media
     'home',
-    # 'products',
+    'products',
     # 'bag',
     # 'checkout',
     # 'profiles',
