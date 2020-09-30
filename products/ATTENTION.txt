@@ -1,0 +1,2 @@
+Using shell to update sizes, some products were updated as having sizes...they can be changed either
+through shell again or through the admin panel.
