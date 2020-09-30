@@ -9,7 +9,7 @@ class OrderForm(forms.ModelForm):
                   'street_address1', 'street_address2',
                   'town_or_city', 'postcode', 'country',
                   'county',)
-
+    # Overriding this method allows us to customise it
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
