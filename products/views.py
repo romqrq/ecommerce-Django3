@@ -16,12 +16,15 @@ def all_products(request):
 
     if request.GET:
         if 'sort' in request.GET:
+            # The reason for copying the sort parameter into sortkey is because this way we preserve
+            # the original field name
             sortkey = request.GET['sort']
             sort = sortkey
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
-
+            if sortkey == 'category':
+                sortkey = 'category__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
