@@ -13,6 +13,7 @@ class ProductForm(forms.ModelForm):
     image = forms.ImageField(label='Image',
                              required=False,
                              widget=CustomClearableFileInput)
+
     # overriding the init method
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -20,9 +21,13 @@ class ProductForm(forms.ModelForm):
         # get all categories
         categories = Category.objects.all()
         # Create a list of tuples of the friendly names associated with their category ids
-        # This special syntax is called the list comprehension.
+        # This special syntax is called the list comprehension. just a shorthand to create 
+        # a for loop that adds items to a list
         friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
 
+        # updating the category field on the form.
         self.fields['category'].choices = friendly_names
+        # iterate through the rest of these fields and set some classes on them
+        # to make them match the theme of the rest of our store.
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
