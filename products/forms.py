@@ -9,7 +9,8 @@ class ProductForm(forms.ModelForm):
         model = Product
         # this dunder includes all the fields
         fields = '__all__'
-
+    # imported clearable file widget and replace the image field on the form
+    # with the new one which utilises the widget
     image = forms.ImageField(label='Image',
                              required=False,
                              widget=CustomClearableFileInput)
